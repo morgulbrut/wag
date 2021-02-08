@@ -1,3 +1,5 @@
+DISCLAIMER: The readme looks better in dark mode.
+
 ![WAG](example/wag.png)
 
 Renders text in whatever cheesy bitmap font you got.
