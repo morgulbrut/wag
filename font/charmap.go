@@ -6,18 +6,16 @@ import (
 )
 
 type BitmapFont struct {
-	Font     string   `json:"font"`
-	Tilesize Tilesize `json:"tilesize"`
-	Chars    []Char   `json:"chars"`
+	Font  string `json:"font"`
+	Chars []Char `json:"chars"`
 }
-type Tilesize struct {
-	SizeX int `json:"sizeX"`
-	SizeY int `json:"sizeY"`
-}
+
 type Char struct {
-	Name string `json:"name"`
-	PosX int    `json:"posX"`
-	PosY int    `json:"posY"`
+	Name  string `json:"name"`
+	PosX  int    `json:"posX"`
+	PosY  int    `json:"posY"`
+	SizeX int    `json:"sizeX"`
+	SizeY int    `json:"sizeY"`
 }
 
 func ReadFont(filename string) BitmapFont {

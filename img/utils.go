@@ -42,6 +42,6 @@ func WriteImage(filename string, img image.Image) {
 func GetSubimage(img image.Image, posX, posY, sizeX, sizeY int) image.Image {
 	si := img.(interface {
 		SubImage(r image.Rectangle) image.Image
-	}).SubImage(image.Rect(posX*sizeX, posY*sizeY, (posX+1)*sizeX, (posY+1)*sizeY))
+	}).SubImage(image.Rect(posX, posY, posX+sizeX, posY+sizeY))
 	return si
 }
