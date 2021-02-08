@@ -2,11 +2,7 @@ package font
 
 import (
 	"encoding/json"
-	"image"
-	"image/draw"
 	"io/ioutil"
-
-	"github.com/morgulbrut/wag/img"
 )
 
 type BitmapFont struct {
@@ -41,27 +37,4 @@ func FindChar(char string, font BitmapFont) (Char, int) {
 		}
 	}
 	return Char{}, -1
-}
-
-func WriteText(text string, ft BitmapFont) *image.RGBA {
-
-	chars := img.LoadImage(ft.Font)
-
-	canvas := image.NewRGBA(image.Rect(0, 0, len(text)*ft.Tilesize.SizeX, ft.Tilesize.SizeY))
-
-	for i, c := range text {
-		ch, _ := FindChar(string(c), ft)
-		src := img.GetSubimage(chars, ch.PosX, ch.PosY, ft.Tilesize.SizeX, ft.Tilesize.SizeY)
-
-		b := src.Bounds()
-		letter := image.NewRGBA(image.Rect(0, 0, b.Dx(), b.Dy()))
-		draw.Draw(letter, letter.Bounds(), src, b.Min, draw.Src)
-
-		draw.Draw(canvas,
-			image.Rect(i*ft.Tilesize.SizeX, 0, (i+1)*ft.Tilesize.SizeX, ft.Tilesize.SizeY),
-			letter,
-			image.Point{},
-			draw.Over)
-	}
-	return canvas
 }
