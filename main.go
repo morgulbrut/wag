@@ -18,6 +18,7 @@ func main() {
 
 	fontname := parser.String("f", "font", &argparse.Options{Required: true, Help: "<font>.json you want to use"})
 	input := parser.String("t", "text", &argparse.Options{Required: true, Help: "text you want to write"})
+	spacing := parser.Int("s", "spacing", &argparse.Options{Default: 1, Help: "Optional spacing "})
 	err := parser.Parse(os.Args)
 	if err != nil {
 		fmt.Print(parser.Usage(err))
@@ -25,7 +26,7 @@ func main() {
 
 	ft := font.ReadFont(*fontname)
 
-	text := font.WriteLine(*input, ft)
+	text := font.WriteLine(*input, ft, *spacing)
 
 	img.WriteImage("text.png", text)
 }
