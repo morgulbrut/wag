@@ -324,6 +324,27 @@
          "sizeY": 32
       },
       {
+         "name": "/",
+         "posX": 160,
+         "posY": 32,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "-",
+         "posX": 96,
+         "posY": 32,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "=",
+         "posX": 288,
+         "posY": 64,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
          "name": "\"",
          "posX": 64,
          "posY": 0,
