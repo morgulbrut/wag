@@ -8,12 +8,21 @@ import (
 	"github.com/morgulbrut/wag/img"
 )
 
-func WriteLine(text string, ft BitmapFont, offset int) *image.RGBA {
+func WriteLine(text string, ft BitmapFont, spacing int) *image.RGBA {
 	color256.PrintHiGreen("Building %s", text)
 	chars := img.LoadImage(ft.Font)
-	canvas := image.NewRGBA(image.Rect(0, 0, len(text)*(ft.Chars[0].SizeX+offset), ft.Chars[0].SizeY))
 
-	for i, c := range text {
+	width := 0
+
+	for _, c := range text {
+		ch, _ := FindChar(string(c), ft)
+		width += ch.SizeX + spacing
+	}
+
+	canvas := image.NewRGBA(image.Rect(0, 0, width, ft.Chars[0].SizeY))
+
+	xPos := 0
+	for _, c := range text {
 		ch, _ := FindChar(string(c), ft)
 		src := img.GetSubimage(chars, ch.PosX, ch.PosY, ft.Chars[0].SizeX, ft.Chars[0].SizeY)
 
@@ -22,10 +31,11 @@ func WriteLine(text string, ft BitmapFont, offset int) *image.RGBA {
 		draw.Draw(letter, letter.Bounds(), src, b.Min, draw.Src)
 
 		draw.Draw(canvas,
-			image.Rect(i*(ft.Chars[0].SizeX+offset), 0, (i+1)*(ft.Chars[0].SizeX+offset), ft.Chars[0].SizeY),
+			image.Rect(xPos, 0, xPos+ch.SizeX+spacing, ft.Chars[0].SizeY),
 			letter,
 			image.Point{},
 			draw.Over)
+		xPos += ch.SizeX + spacing
 	}
 	return canvas
 }
