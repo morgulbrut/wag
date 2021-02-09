@@ -13,4 +13,5 @@ Renders text in whatever cheesy bitmap font you got.
 
 ![Installation](example/installation.png)
 
-Just use good old `go get github.com/morgulbrut/wag`
+* Just use good old `go get github.com/morgulbrut/wag`
+* Or grab a binary at the release tab
