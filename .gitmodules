@@ -1,0 +1,3 @@
+[submodule "BitmapFonts"]
+	path = BitmapFonts
+	url = https://github.com/ianhan/BitmapFonts.git
