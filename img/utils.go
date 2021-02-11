@@ -2,6 +2,7 @@ package img
 
 import (
 	"image"
+	"image/color"
 	"image/png"
 	"os"
 
@@ -44,4 +45,19 @@ func GetSubimage(img image.Image, posX, posY, sizeX, sizeY int) image.Image {
 		SubImage(r image.Rectangle) image.Image
 	}).SubImage(image.Rect(posX, posY, posX+sizeX, posY+sizeY))
 	return si
+}
+
+func ColorToTransparent(img image.Image, col color.RGBA) *image.RGBA {
+	b := img.Bounds()
+	li := image.NewRGBA(b)
+	for i := 0; i < b.Dx(); i++ {
+		for j := 0; j < b.Dy(); j++ {
+			if img.At(i, j) == col {
+				li.Set(i, j, color.RGBA{0, 0, 0, 0})
+			} else {
+				li.Set(i, j, img.At(i, j))
+			}
+		}
+	}
+	return li
 }
