@@ -15,12 +15,14 @@ type imgSize image.Point
 
 func main() {
 
+	testString := "ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 (),.:;!?"
 	parser := argparse.NewParser("wag", "Make text look awesome using bitmap fonts")
 
 	fontname := parser.String("f", "font", &argparse.Options{Required: true, Help: "<font>.json you want to use"})
-	input := parser.String("t", "text", &argparse.Options{Required: true, Help: "text you want to write"})
-	spacing := parser.Int("s", "spacing", &argparse.Options{Default: 1, Help: "Optional spacing "})
-	hexcolor := parser.String("c", "color", &argparse.Options{Default: "#000000FF", Help: "Colour to be made transparent "})
+	input := parser.String("t", "text", &argparse.Options{Default: testString, Help: "text you want to write"})
+	spacing := parser.Int("s", "spacing", &argparse.Options{Default: 0, Help: "Optional spacing "})
+	hexcolor := parser.String("c", "color", &argparse.Options{Default: "#000000FF", Help: "Colour to be made transparent"})
+	output := parser.String("o", "output", &argparse.Options{Default: "text", Help: "Output file name (without ending)"})
 
 	err := parser.Parse(os.Args)
 	if err != nil {
@@ -33,7 +35,7 @@ func main() {
 	col, _ := ParseHexColor(*hexcolor)
 
 	text = img.ColorToTransparent(text, col)
-	img.WriteImage("text.png", text)
+	img.WriteImage(*output+".png", text)
 }
 
 func ParseHexColor(s string) (c color.RGBA, err error) {
