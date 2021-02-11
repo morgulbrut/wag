@@ -1,5 +1,5 @@
 {
-   "font": "BitmapFonts/32X32-F5.png",
+   "font": "BitmapFonts/32X32-FB.png",
    "chars": [
       {
          "name": "A",
@@ -59,9 +59,9 @@
       },
       {
          "name": "I",
-         "posX": 32,
+         "posX": 38,
          "posY": 128,
-         "sizeX": 32,
+         "sizeX": 20,
          "sizeY": 32
       },
       {

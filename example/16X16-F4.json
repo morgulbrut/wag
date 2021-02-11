@@ -1,5 +1,5 @@
 {
-   "font": "example/16X16-F4_tr.png",
+   "font": "BitmapFonts/16X16-F4_tr.png",
    "chars": [
       {
          "name": "A",
