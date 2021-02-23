@@ -1,6 +1,7 @@
 package main
 
 import (
+	"embed"
 	"fmt"
 	"image"
 	"image/color"
@@ -13,18 +14,24 @@ import (
 
 type imgSize image.Point
 
+//go:embed fontdesc/*
+var data embed.FS
+
 func main() {
 
-	testString := "ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 (),.:;!?"
-	parser := argparse.NewParser("wag", "Make text look awesome using bitmap fonts")
+	testString, err := data.ReadFile("fontdesc/test.txt")
+	if err != nil {
+		panic(err)
+	}
 
+	parser := argparse.NewParser("wag", "Make text look awesome using bitmap fonts")
 	fontname := parser.String("f", "font", &argparse.Options{Required: true, Help: "<font>.json you want to use"})
-	input := parser.String("t", "text", &argparse.Options{Default: testString, Help: "text you want to write"})
+	input := parser.String("t", "text", &argparse.Options{Default: string(testString), Help: "text you want to write"})
 	spacing := parser.Int("s", "spacing", &argparse.Options{Default: 0, Help: "Optional spacing "})
 	hexcolor := parser.String("c", "color", &argparse.Options{Default: "#000000FF", Help: "Colour to be made transparent"})
 	output := parser.String("o", "output", &argparse.Options{Default: "text", Help: "Output file name (without ending)"})
 
-	err := parser.Parse(os.Args)
+	err = parser.Parse(os.Args)
 	if err != nil {
 		fmt.Print(parser.Usage(err))
 	}
