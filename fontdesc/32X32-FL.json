@@ -1,0 +1,355 @@
+{
+   "font": "BitmapFonts/32X32-FL.png",
+   "chars": [
+      {
+         "name": "A",
+         "posX": 96,
+         "posY": 96,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "B",
+         "posX": 128,
+         "posY": 96,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "C",
+         "posX": 160,
+         "posY": 96,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "D",
+         "posX": 192,
+         "posY": 96,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "E",
+         "posX": 224,
+         "posY": 96,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "F",
+         "posX": 256,
+         "posY": 96,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "G",
+         "posX": 288,
+         "posY": 96,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "H",
+         "posX": 0,
+         "posY": 128,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "I",
+         "posX": 32,
+         "posY": 128,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "J",
+         "posX": 64,
+         "posY": 128,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "K",
+         "posX": 96,
+         "posY": 128,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "L",
+         "posX": 128,
+         "posY": 128,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "M",
+         "posX": 160,
+         "posY": 128,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "N",
+         "posX": 192,
+         "posY": 128,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "O",
+         "posX": 224,
+         "posY": 128,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "P",
+         "posX": 256,
+         "posY": 128,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "Q",
+         "posX": 288,
+         "posY": 128,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "R",
+         "posX": 0,
+         "posY": 160,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "S",
+         "posX": 32,
+         "posY": 160,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "T",
+         "posX": 64,
+         "posY": 160,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "U",
+         "posX": 96,
+         "posY": 160,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "V",
+         "posX": 128,
+         "posY": 160,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "W",
+         "posX": 160,
+         "posY": 160,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "X",
+         "posX": 192,
+         "posY": 160,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "Y",
+         "posX": 224,
+         "posY": 160,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "Z",
+         "posX": 256,
+         "posY": 160,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "0",
+         "posX": 192,
+         "posY": 32,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "1",
+         "posX": 224,
+         "posY": 32,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "2",
+         "posX": 256,
+         "posY": 32,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "3",
+         "posX": 288,
+         "posY": 32,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "4",
+         "posX": 0,
+         "posY": 64,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "5",
+         "posX": 32,
+         "posY": 64,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "6",
+         "posX": 64,
+         "posY": 64,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "7",
+         "posX": 96,
+         "posY": 64,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "8",
+         "posX": 128,
+         "posY": 64,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "9",
+         "posX": 160,
+         "posY": 64,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": " ",
+         "posX": 0,
+         "posY": 0,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": ".",
+         "posX": 128,
+         "posY": 32,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": ",",
+         "posX": 64,
+         "posY": 32,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": ";",
+         "posX": 224,
+         "posY": 64,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": ":",
+         "posX": 192,
+         "posY": 64,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "(",
+         "posX": 256,
+         "posY": 0,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": ")",
+         "posX": 288,
+         "posY": 0,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "!",
+         "posX": 32,
+         "posY": 0,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "?",
+         "posX": 32,
+         "posY": 96,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "'",
+         "posX": 224,
+         "posY": 0,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "/",
+         "posX": 160,
+         "posY": 32,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "-",
+         "posX": 96,
+         "posY": 32,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "=",
+         "posX": 288,
+         "posY": 64,
+         "sizeX": 32,
+         "sizeY": 32
+      },
+      {
+         "name": "\"",
+         "posX": 64,
+         "posY": 0,
+         "sizeX": 32,
+         "sizeY": 32
+      }
+   ]
+}
