@@ -23,7 +23,7 @@ Example `wag -f font3 -t  "HELLO WORLD" -o hello`
 
 * Grab the binary you need at the release tab. They are built using gox, and not really tested on every system.
 
-![Build yourself](example/developement.png)
+![Build yourself](example/development.png)
 
 1. **Be sure to run Go 1.16, because of the embed library.**
 2. Clone the repo using `git clone --recursive https://github.com/morgulbrut/wag.git`
