@@ -1,6 +1,7 @@
 package font
 
 import (
+	"embed"
 	"image"
 	"image/draw"
 
@@ -8,9 +9,17 @@ import (
 	"github.com/morgulbrut/wag/img"
 )
 
-func WriteLine(text string, ft BitmapFont, spacing int) *image.RGBA {
+func WriteLine(text string, ft BitmapFont, spacing int, d embed.FS) *image.RGBA {
 	color256.PrintHiGreen("Building %s", text)
-	chars := img.LoadImage(ft.Font)
+
+	// chars := img.LoadImage(ft.Font)
+
+	f, err := d.Open(ft.Font)
+	if err != nil {
+		panic(err)
+	}
+	defer f.Close()
+	chars, _, err := image.Decode(f)
 
 	width := 0
 

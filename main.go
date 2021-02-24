@@ -15,6 +15,7 @@ import (
 type imgSize image.Point
 
 //go:embed fontdesc/*
+//go:embed BitmapFonts/32X32-F*.png
 var data embed.FS
 
 func main() {
@@ -24,8 +25,8 @@ func main() {
 		panic(err)
 	}
 
-	parser := argparse.NewParser("wag", "Make text look awesome using bitmap fonts")
-	fontname := parser.String("f", "font", &argparse.Options{Required: true, Help: "<font>.json you want to use"})
+	parser := argparse.NewParser("wag", "Make text look awesome (questionable) using bitmap fonts")
+	fontname := parser.String("f", "font", &argparse.Options{Default: "font5", Help: "<font>.json you want to use"})
 	input := parser.String("t", "text", &argparse.Options{Default: string(testString), Help: "text you want to write"})
 	spacing := parser.Int("s", "spacing", &argparse.Options{Default: 0, Help: "Optional spacing "})
 	hexcolor := parser.String("c", "color", &argparse.Options{Default: "#000000FF", Help: "Colour to be made transparent"})
@@ -36,11 +37,9 @@ func main() {
 		fmt.Print(parser.Usage(err))
 	}
 
-	ft := font.ReadFont(*fontname)
-
-	text := font.WriteLine(*input, ft, *spacing)
+	ft := font.ReadFont(*fontname, data)
+	text := font.WriteLine(*input, ft, *spacing, data)
 	col, _ := ParseHexColor(*hexcolor)
-
 	text = img.ColorToTransparent(text, col)
 	img.WriteImage(*output+".png", text)
 }

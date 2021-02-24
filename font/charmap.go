@@ -1,8 +1,8 @@
 package font
 
 import (
+	"embed"
 	"encoding/json"
-	"io/ioutil"
 )
 
 type BitmapFont struct {
@@ -18,10 +18,27 @@ type Char struct {
 	SizeY int    `json:"sizeY"`
 }
 
-func ReadFont(filename string) BitmapFont {
-	file, _ := ioutil.ReadFile(filename)
+func ReadFont(filename string, d embed.FS) BitmapFont {
+	// file, err := ioutil.ReadFile(filename)
+
+	fonts, err := d.ReadFile("fontdesc/fonts.json")
+	if err != nil {
+		panic(err)
+	}
+
+	fileMap := make(map[string]string)
+	err = json.Unmarshal([]byte(fonts), &fileMap)
+	if err != nil {
+		panic(err)
+	}
+
+	fn := fileMap[filename]
+	file, err := d.ReadFile(fn)
+	if err != nil {
+		panic(err)
+	}
 	data := BitmapFont{}
-	err := json.Unmarshal([]byte(file), &data)
+	err = json.Unmarshal([]byte(file), &data)
 	if err != nil {
 		panic(err)
 	}
